@@ -1,10 +1,6 @@
 import streamlit as st
 
 
-def on_change_handler():
-    st.session_state.select_video = "is_selected"
-
-
 # variable name can be what the slider input represents
 some_number = st.slider("test slider", value=[50, 60])
 
@@ -16,3 +12,27 @@ selected_video = st.selectbox(
 )
 
 st.write(selected_video)
+
+selected_videos = st.multiselect(
+    "Select video(s) you wish to watch.", options=["Video A", "Video B", "Video C"]
+)
+
+st.write("You selected:", selected_videos)
+
+
+st.header("st.checkbox")
+
+st.write("What would you like to order?")
+
+icecream = st.checkbox("Ice cream")
+coffee = st.checkbox("Coffee")
+cola = st.checkbox("Cola")
+
+if icecream:
+    st.write("Great! Here's some more 🍦")
+
+if coffee:
+    st.write("Okay, here's some coffee ☕")
+
+if cola:
+    st.write("Here you go 🥤")
